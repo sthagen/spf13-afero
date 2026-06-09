@@ -16,7 +16,6 @@ package afero
 
 import (
 	"os"
-	"path/filepath"
 	"time"
 )
 
@@ -106,11 +105,7 @@ func (OsFs) LstatIfPossible(name string) (os.FileInfo, bool, error) {
 }
 
 func (OsFs) SymlinkIfPossible(oldname, newname string) error {
-	relpath, err := filepath.Rel(filepath.Dir(newname), oldname)
-	if err != nil {
-		return &os.LinkError{Op: "symlink", Old: oldname, New: newname, Err: err}
-	}
-	return os.Symlink(relpath, newname)
+	return os.Symlink(oldname, newname)
 }
 
 func (OsFs) ReadlinkIfPossible(name string) (string, error) {

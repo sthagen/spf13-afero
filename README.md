@@ -50,7 +50,6 @@ import "github.com/spf13/afero"
 | | **ReadOnlyFs** | `afero.NewReadOnlyFs(source)` | Provides a read-only view, preventing any modifications. | ✅ Official |
 | | **RegexpFs** | `afero.NewRegexpFs(source, regexp)` | Filters a filesystem, only showing files that match a regex. | ✅ Official |
 | **Utility** | **HttpFs** | `afero.NewHttpFs(source)` | Wraps any Afero filesystem to be served via `http.FileServer`. | ✅ Official |
-| | **ServeSMB** | [`3xport/servesmb`](https://github.com/3xport/servesmb) | Wraps any Afero filesystem to be served via SMB protocol | 🔹 3rd Party |
 | **Archives** | **ZipFs** | `zipfs.New(zipReader)` | Read-only access to files within a ZIP archive. | ✅ Official |
 | | **TarFs** | `tarfs.New(tarReader)` | Read-only access to files within a TAR archive. | ✅ Official |
 | **Network** | **GcsFs** | `gcsfs.NewGcsFs(...)` | Google Cloud Storage backend. | ⚡ Experimental |
